@@ -7,23 +7,32 @@ Go Trello API
 [![Build Status](https://travis-ci.org/adlio/trello.svg)](https://travis-ci.org/adlio/trello)
 [![Coverage Status](https://coveralls.io/repos/github/adlio/trello/badge.svg?branch=master)](https://coveralls.io/github/adlio/trello?branch=master)
 
-A #golang package to access the [Trello API](https://developers.trello.com/v1.0/reference). Nearly 100% of the
-read-only surface area of the API is covered, as is creation and modification of Cards.
-Low-level infrastructure for features to modify Lists and Boards are easy to add... just not
-done yet.
+# Fork explanation
+I created this fork only for resolving lack of some fields of "action" and "card" structures for my private project
 
-Pull requests are welcome for missing features.
+Action:
+1. AppCreator data structure (butler purposes)
+2. Label data structure (actions with labels specifically)
 
-My current development focus is documentation, especially enhancing this README.md with more
-example use cases.
+ActionDataCard:
+1. Due - for some reason it wasn't in the original package
 
+Card:
+1. IsTemplate - Pretty valuable information in some situations.
+
+If you happen to land here and want to look at actual and original package feel free to visit <a href="https://github.com/adlio/trello"> original git created by adlio</a>
+
+
+___
+___
+___
 ## Installation
 
 The Go Trello API has been Tested compatible with Go 1.7 on up. Its only dependency is
 the `github.com/pkg/errors` package. It otherwise relies only on the Go standard library.
 
 ```
-go get github.com/adlio/trello
+go get github.com/patamen/trello
 ```
 
 ## Basic Usage
