@@ -50,6 +50,8 @@ type Card struct {
 	Subscribed       bool       `json:"subscribed"`
 	DateLastActivity *time.Time `json:"dateLastActivity"`
 
+	IsTemplate bool `json:"isTemplate"`
+
 	// Board
 	Board   *Board
 	IDBoard string `json:"idBoard"`

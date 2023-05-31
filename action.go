@@ -21,7 +21,14 @@ type Action struct {
 	Date            time.Time   `json:"date"`
 	Data            *ActionData `json:"data,omitempty"`
 	MemberCreator   *Member     `json:"memberCreator,omitempty"`
-	Member          *Member     `json:"member,omitempty"`
+	AppCreator      *struct {
+		ID   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"appCreator"`
+	Member  *Member `json:"member,omitempty"`
+	Display struct {
+		TranslationKey string `json:"translationKey"`
+	} `json:"Display"`
 }
 
 // ActionData represent the nested data of actions
@@ -38,16 +45,24 @@ type ActionData struct {
 
 	CheckItem *CheckItem `json:"checkItem"`
 	Checklist *Checklist `json:"checklist"`
+
+	Label *struct {
+		ID    string `json:"id"`
+		Name  string `json:"name"`
+		Color string `json:"color"`
+	} `json:"label,omitempty"`
 }
 
 // ActionDataCard represent the nested 'card' data attribute of actions
 type ActionDataCard struct {
-	ID        string  `json:"id"`
-	Name      string  `json:"name"`
-	IDShort   int     `json:"idShort"`
-	ShortLink string  `json:"shortLink"`
-	Pos       float64 `json:"pos"`
-	Closed    bool    `json:"closed"`
+	ID        string     `json:"id"`
+	Name      string     `json:"name"`
+	Color     string     `json:"color"`
+	IDShort   int        `json:"idShort"`
+	ShortLink string     `json:"shortLink"`
+	Pos       float64    `json:"pos"`
+	Closed    bool       `json:"closed"`
+	Due       *time.Time `json:"due"`
 }
 
 // GetActions make a GET call for a board's actions
