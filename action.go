@@ -51,6 +51,14 @@ type ActionData struct {
 		Name  string `json:"name"`
 		Color string `json:"color"`
 	} `json:"label,omitempty"`
+
+	IDMember   *string           `json:"idMember,omitempty"`
+	Attachment *AttachmentObject `json:"attachment,omitempty"`
+}
+
+type AttachmentObject struct {
+	Name *string `json:"name,omitempty"`
+	URL  *string `json:"url,omitempty"`
 }
 
 // ActionDataCard represent the nested 'card' data attribute of actions

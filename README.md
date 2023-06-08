@@ -13,6 +13,8 @@ I created this fork only for resolving lack of some fields of "action" and "card
 Action:
 1. AppCreator data structure (butler purposes)
 2. Label data structure (actions with labels specifically)
+3. Attachment nullable info
+4. Data.IDMember
 
 ActionDataCard:
 1. Due - for some reason it wasn't in the original package
