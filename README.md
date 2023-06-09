@@ -15,6 +15,7 @@ Action:
 2. Label data structure (actions with labels specifically)
 3. Attachment nullable info
 4. Data.IDMember
+5. Data.Desc
 
 ActionDataCard:
 1. Due - for some reason it wasn't in the original package
