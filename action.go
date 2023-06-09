@@ -71,6 +71,7 @@ type ActionDataCard struct {
 	Pos       float64    `json:"pos"`
 	Closed    bool       `json:"closed"`
 	Due       *time.Time `json:"due"`
+	Desc      *string    `json:"desc,omitempty"`
 }
 
 // GetActions make a GET call for a board's actions
